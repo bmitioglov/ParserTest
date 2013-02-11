@@ -100,10 +100,17 @@ class MyParser extends DefaultHandler {
                 index++;
             }
         }
-        if (!Character.isWhitespace(str3.charAt(index-1)))  //записываем последний токен
-            coord[indexCoord] = Double.parseDouble(token);
-            
-
-        return coord[3];
+        if (!Character.isWhitespace(str3.charAt(index-1)))  
+            coord[indexCoord] = Double.parseDouble(token);  //записываем последний токен
+        
+        //Вычислим длину
+        double x1 = coord[0];
+        double y1 = coord[1];
+        double x2 = coord[2];
+        double y2 = coord[3];
+        double dlina = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1), 2));
+        return dlina;
     }
+    
+
 }
